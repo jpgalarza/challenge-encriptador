@@ -1,0 +1,92 @@
+:root {
+  --primary-color: #0A3871;
+  --body-color: #E9ECF8;
+  --light-font-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-color);
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.logo {
+  height: 40px;
+}
+
+
+main {
+  flex-grow: 1;
+}
+
+.main-container {
+  display: flex;
+  padding: 10px 30px;
+}
+
+.entry-section {
+  flex-grow: 1;
+}
+
+.text-area {
+  font-size: 32px;
+  line-height: 48px;
+  color: var(--primary-color);
+  width: 100%;
+  padding: 30px;
+  border: none;
+  resize: none;
+  background-color: transparent;
+}
+
+.text-area::placeholder {
+  color: var(--primary-color);
+}
+
+.exit-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 400px;
+  background-color: var(--light-font-color);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.muneco {
+  width: 300px;
+  margin-bottom: 30px;
+}
+
+.exit-section>h2, .exit-section>p  {
+  text-align: center;
+}
+
+.exit-section>h2 {
+  margin: 20px 0;
+}
+
+footer {
+  background-color: #676262;
+}
+
+.footer-container {
+  color: var(--light-font-color);
+  text-align: center;
+}
+
+.container {
+  max-width: 1440px;
+  margin: auto;
+}

@@ -4,24 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 
   <title>Encriptador</title>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1><img class="logo" src="imgs/logo.svg" alt="Logo de Alura"></h1>
+      <img class="logo" src="imgs/logo.svg" alt="Logo de Alura">
     </div>
   </header>
 
   <main>
+    
     <div class="main-container container">
       <section class="entry-section">
-        <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese aquí su texto"></textarea>
+        <h1>Encriptador de Texto</h1>
+        <textarea class="input-text textarea-style" rows="10" placeholder="Ingrese aquí su texto">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi similique consectetur optio sed veritatis fugit cupiditate asperiores magnam provident architecto ipsa vel doloremque dolorem illo, ea vitae aspernatur. Numquam, iusto!
+        </textarea>
         <div>
           <h6 class="info">Solo letras minúsculas y sin acentos</h6>
         </div>
@@ -31,9 +35,17 @@
         </div>
       </section>
       <section class="exit-section">
-        <img class="muneco" src="imgs/muñeco.svg" alt="imégen de muñeco">
-        <h2>Ningún mensaje fue encontrado</h2>
-        <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+        <div id="no-message">
+          <img src="imgs/muñeco.svg" alt="imégen de muñeco">
+          <h2>Ningún mensaje fue encontrado</h2>
+          <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+        <div id="output-container">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nobis, accusamus aliquam rerum aspernatur quisquam. Cumque voluptatibus explicabo nulla, illum molestiae cum! Doloribus cupiditate repellendus autem modi rerum harum molestias.
+          </p>
+          <button>Copiar</button>
+        </div>
       </section>
     </div>
   </main>

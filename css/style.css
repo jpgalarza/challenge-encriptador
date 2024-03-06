@@ -2,12 +2,15 @@
   --primary-color: #0A3871;
   --body-color: #E9ECF8;
   --light-font-color: #ffffff;
+  --grey: #495057;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Inter;
+  font-weight: 400;
 }
 
 body {
@@ -15,13 +18,12 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--body-color);
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 150%;
 }
 
 .logo {
   height: 40px;
+  margin-top:20px;
+  margin-left: 20px;
 }
 
 
@@ -31,59 +33,79 @@ main {
 
 .main-container {
   display: flex;
-  padding: 10px 30px;
+  padding: 10px 40px;
 }
 
 .entry-section {
   flex-grow: 1;
 }
 
-.text-area {
-  font-size: 32px;
-  line-height: 48px;
-  color: var(--primary-color);
+.textarea-style {
   width: 100%;
-  padding: 30px;
+  padding: 20px 40px;
   border: none;
   resize: none;
   background-color: transparent;
 }
 
-.text-area::placeholder {
+.input-text {
+  font-size: 32px;
+  line-height: 48px;
+  color: var(--primary-color);
+}
+
+.input-text::placeholder {
   color: var(--primary-color);
 }
 
 .exit-section {
+  flex-basis: 400px;
+  background-color: var(--light-font-color);
+  border-radius: 32px;
+  padding: 30px;
+}
+
+#output-container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* display: none; */
+}
+
+#output-container>p {
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--grey);
+}
+
+#no-message {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-basis: 400px;
-  background-color: var(--light-font-color);
-  border-radius: 20px;
-  padding: 20px;
+  text-align: center;
+  display: none;
 }
 
-.muneco {
+#no-message>img {
   width: 300px;
   margin-bottom: 30px;
 }
 
-.exit-section>h2, .exit-section>p  {
-  text-align: center;
-}
-
-.exit-section>h2 {
+#no-message>h2 {
   margin: 20px 0;
 }
 
 footer {
-  background-color: #676262;
+  background-color: var(--grey);
 }
 
 .footer-container {
   color: var(--light-font-color);
   text-align: center;
+  padding: 20px 0;
 }
 
 .container {

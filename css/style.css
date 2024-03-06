@@ -26,23 +26,35 @@ body {
   margin-left: 20px;
 }
 
-
 main {
   flex-grow: 1;
 }
 
 .main-container {
   display: flex;
+  min-height: 82vh;
   padding: 10px 40px;
 }
 
 .entry-section {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.entry-section>h1 {
+  margin: 0 0 15px 0;
+  text-align: center;
+  font-weight: bold;
+  color: var(--grey);
 }
 
 .textarea-style {
   width: 100%;
-  padding: 20px 40px;
+  flex-grow: 1;
+  padding: 0;
   border: none;
   resize: none;
   background-color: transparent;
@@ -52,17 +64,58 @@ main {
   font-size: 32px;
   line-height: 48px;
   color: var(--primary-color);
+  padding: 0 40px;
 }
 
 .input-text::placeholder {
   color: var(--primary-color);
 }
 
+.info {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  height: 24px;
+  padding: 0 70px;
+  margin-top: 10px;
+}
+
+.info>h6 {
+  margin-left: 5px;
+}
+
+.material-icons {
+  color: var(--grey);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 40p;
+}
+
+.buttons>.btn {
+  width: 45%;
+}
+
+.btn {
+  padding: 24px;
+  margin: 20px 0;
+  border-radius: 24px;
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+}
+
+.btn:active {
+  background-color: var(--primary-color);
+  color: var(--light-font-color);
+}
+
 .exit-section {
   flex-basis: 400px;
   background-color: var(--light-font-color);
   border-radius: 32px;
-  padding: 30px;
+  padding: 20px 30px 5px 30px;
 }
 
 #output-container{
@@ -73,7 +126,7 @@ main {
   /* display: none; */
 }
 
-#output-container>p {
+#output-container>textarea {
   font-size: 24px;
   line-height: 36px;
   color: var(--grey);

@@ -24,8 +24,10 @@ const verifyText = (e) => {
 
 const encryptText = () => {
   const inputText = document.querySelector('#input-text');
-  let text = inputText.value;
   const output = document.querySelector('#output');
+  const noMessageContainer = document.querySelector('#no-message');
+  const outputContainer = document.querySelector('#output-container');
+  let text = inputText.value;
   const keysLength = keys.length;
 
   if(text.trim() === '') return;
@@ -37,6 +39,8 @@ const encryptText = () => {
     };
   };
 
+  outputContainer.style.display = 'flex';
+  noMessageContainer.style.display = 'none';
   output.value = text;
   inputText.value = '';
 };
@@ -44,8 +48,10 @@ const encryptText = () => {
 
 const decryptText = () => {
   const inputText = document.querySelector('#input-text');
-  let text = inputText.value;
   const output = document.querySelector('#output');
+  const noMessageContainer = document.querySelector('#no-message');
+  const outputContainer = document.querySelector('#output-container');
+  let text = inputText.value;
   const keysLength = keys.length;
 
   if(text.trim() === '') return;
@@ -57,6 +63,8 @@ const decryptText = () => {
     };
   };
 
+  outputContainer.style.display = 'flex';
+  noMessageContainer.style.display = 'none';
   output.value = text;
   inputText.value = '';
 };

@@ -125,7 +125,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* display: none; */
+  display: none;
 }
 
 #output {
@@ -145,7 +145,6 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  display: none;
 }
 
 #no-message>img {

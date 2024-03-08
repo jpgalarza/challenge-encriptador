@@ -64,13 +64,13 @@ main {
   outline: none;
 }
 
-.input-text {
+#input-text {
   font-size: 32px;
   line-height: 48px;
   color: var(--primary-color);
 }
 
-.input-text::placeholder {
+#input-text::placeholder {
   color: var(--primary-color);
 }
 
@@ -107,7 +107,7 @@ main {
   background-color: transparent;
 }
 
-.btn:active {
+.btn:hover {
   background-color: var(--primary-color);
   color: var(--light-font-color);
 }
@@ -128,10 +128,14 @@ main {
   /* display: none; */
 }
 
-#output-container>textarea {
+#output {
   font-size: 24px;
   line-height: 36px;
   color: var(--grey);
+}
+
+#copy:active {
+  background-color: var(--grey);
 }
 
 #no-message {

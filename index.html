@@ -24,31 +24,27 @@
     <div class="main-container container">
       <section class="entry-section">
         <h1>Encriptador de Texto</h1>
-        <textarea class="input-text textarea-style" placeholder="Ingrese aquí su texto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi similique consectetur optio sed veritatis fugit cupiditate asperiores magnam provident architecto ipsa vel doloremque dolorem illo, ea vitae aspernatur. Numquam, iusto!
-        </textarea>
+        <textarea class="textarea-style" id="input-text" placeholder="Ingrese aquí su texto"></textarea>
         <div>
           <div class="info">
             <span class="material-icons">error</span>
             <h6>Solo letras minúsculas y sin acentos</h6>
           </div>
           <div class="buttons">
-            <button class="btn">Encriptar</button>
-            <button class="btn">Desencriptar</button>
+            <button class="btn" id="encrypt">Encriptar</button>
+            <button class="btn" id="decrypt">Desencriptar</button>
           </div>
         </div>
       </section>
       <section class="exit-section">
+        <div id="output-container">
+          <textarea class="textarea-style" id="output"></textarea>
+          <button class="btn" id="copy">Copiar</button>
+        </div>
         <div id="no-message">
           <img src="imgs/muñeco.svg" alt="imégen de muñeco">
           <h2>Ningún mensaje fue encontrado</h2>
           <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-        </div>
-        <div id="output-container">
-          <textarea class="textarea-style">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi similique consectetur optio sed veritatis fugit cupiditate asperiores magnam provident architecto ipsa vel doloremque dolorem illo, ea vitae aspernatur. Numquam, iusto!
-          </textarea>
-          <button class="btn">Copiar</button>
         </div>
       </section>
     </div>
@@ -58,6 +54,8 @@
     <div class="footer-container container">
       <p>&copy; 2024 Encriptador. Todos los derechos reservados.</p>
     </div>
-  </footer> 
+  </footer>
+  
+  <script src="index.js" type="text/javascript"></script>
 </body>
 </html>

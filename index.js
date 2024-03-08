@@ -28,6 +28,8 @@ const encryptText = () => {
   const output = document.querySelector('#output');
   const keysLength = keys.length;
 
+  if(text.trim() === '') return;
+
   for (let i = 0; i < keysLength; i++) {
     if(text.includes(keys[i][0])) {
       const encryptedText = text.replaceAll(keys[i][0], keys[i][1]);
@@ -45,6 +47,8 @@ const decryptText = () => {
   let text = inputText.value;
   const output = document.querySelector('#output');
   const keysLength = keys.length;
+
+  if(text.trim() === '') return;
 
   for (let i = 0; i < keysLength; i++) {
     if(text.includes(keys[i][1])) {
@@ -66,7 +70,23 @@ const copyText = async () => {
 
     await navigator.clipboard.writeText(text);
 
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Texto copiado",
+      showConfirmButton: false,
+      timer: 1000
+    });
+
   } catch (e) {
-    console.log('No se pudo compiar texto. Hazlo manualmente');
+
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "No se copió texto",
+      showConfirmButton: false,
+      timer: 1000
+    });
+
   };
 };

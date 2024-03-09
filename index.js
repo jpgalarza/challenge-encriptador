@@ -35,7 +35,7 @@ const submitMessage = (e) => {
 
   if(specialChars.test(value)) {
     Swal.fire({
-      title: "Corregir el texto",
+      title: "Corregir texto",
       text: "No debe contener caracteres especiales",
       icon: "error"
     });

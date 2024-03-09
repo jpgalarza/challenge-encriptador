@@ -23,18 +23,20 @@
     
     <div class="main-container container">
       <section class="entry-section">
-        <h1>Encriptador</h1>
-        <textarea class="textarea-style" id="input-text" placeholder="Ingrese aquí su texto"></textarea>
-        <div>
-          <div class="info">
-            <span class="material-icons">error</span>
-            <h6>Solo letras minúsculas y sin acentos</h6>
+        <form id="message-form">
+          <h1>Encriptador</h1>
+          <textarea class="textarea-style" id="input-text" placeholder="Ingrese aquí su texto"></textarea>
+          <div>
+            <div class="info">
+              <span class="material-icons">error</span>
+              <h6>Solo letras minúsculas y sin acentos</h6>
+            </div>
+            <div class="buttons">
+              <button class="btn" id="encrypt">Encriptar</button>
+              <button class="btn" id="decrypt">Desencriptar</button>
+            </div>
           </div>
-          <div class="buttons">
-            <button class="btn" id="encrypt">Encriptar</button>
-            <button class="btn" id="decrypt">Desencriptar</button>
-          </div>
-        </div>
+        </form>
       </section>
       <section class="exit-section">
         <div id="output-container">

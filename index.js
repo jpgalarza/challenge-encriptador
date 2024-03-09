@@ -4,8 +4,7 @@ const keys = [ ['e','enter'], ['i','imes'], ['a','ai'], ['o','ober'], ['u','ufat
 
 function loadListeners() {
   document.querySelector('#input-text').addEventListener('input', verifyText);
-  document.querySelector('#encrypt').addEventListener('click', encryptText);
-  document.querySelector('#decrypt').addEventListener('click', decryptText);
+  document.querySelector('#message-form').addEventListener('submit', submitMessage);
   document.querySelector('#copy').addEventListener('click', copyText);
 };
 
@@ -22,21 +21,33 @@ const verifyText = (e) => {
 };
 
 
-const encryptText = () => {
+const submitMessage = (e) => {
+  e.preventDefault();
   const inputText = document.querySelector('#input-text');
   const output = document.querySelector('#output');
   const noMessageContainer = document.querySelector('#no-message');
   const outputContainer = document.querySelector('#output-container');
-  let text = inputText.value;
-  const keysLength = keys.length;
+  const value = inputText.value.trim();
+  const specialChars= /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+  let text;
 
-  if(text.trim() === '') return;
+  if(value === '') return;
 
-  for (let i = 0; i < keysLength; i++) {
-    if(text.includes(keys[i][0])) {
-      const encryptedText = text.replaceAll(keys[i][0], keys[i][1]);
-      text = encryptedText;
-    };
+  
+  if(specialChars.test(value)) {
+    Swal.fire({
+      title: "No se pudo procesar",
+      text: "El texto no debe contener caracteres especiales",
+      icon: "error"
+    });
+
+    return;
+  };
+  
+  if(e.submitter.id === 'encrypt') {
+    text = encryptText(value);
+  }else {
+    text = decryptText(value);
   };
 
   outputContainer.style.display = 'flex';
@@ -46,27 +57,29 @@ const encryptText = () => {
 };
 
 
-const decryptText = () => {
-  const inputText = document.querySelector('#input-text');
-  const output = document.querySelector('#output');
-  const noMessageContainer = document.querySelector('#no-message');
-  const outputContainer = document.querySelector('#output-container');
-  let text = inputText.value;
+const encryptText = (string) => {
   const keysLength = keys.length;
 
-  if(text.trim() === '') return;
-
   for (let i = 0; i < keysLength; i++) {
-    if(text.includes(keys[i][1])) {
-      const decryptedText = text.replaceAll(keys[i][1], keys[i][0]);
-      text = decryptedText;
+    if(string.includes(keys[i][0])) {
+      string = string.replaceAll(keys[i][0], keys[i][1]);
     };
   };
 
-  outputContainer.style.display = 'flex';
-  noMessageContainer.style.display = 'none';
-  output.value = text;
-  inputText.value = '';
+  return string;
+};
+
+
+const decryptText = (string) => {
+  const keysLength = keys.length;
+
+  for (let i = 0; i < keysLength; i++) {
+    if(string.includes(keys[i][1])) {
+      string = string.replaceAll(keys[i][1], keys[i][0]);
+    };
+  };
+
+  return string;
 };
 
 

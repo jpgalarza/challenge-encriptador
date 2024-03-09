@@ -32,16 +32,16 @@ main {
 
 .main-container {
   display: flex;
-  min-height: 84vh;
-  padding: 10px 100px;
+  flex-direction: column;
+  padding: 10px; 
 }
 
 .entry-section {
-  flex-grow: 1;
+  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 5px;
+  padding: 0 20px 20px 20px;
 }
 
 .entry-section>h1 {
@@ -79,7 +79,7 @@ main {
   align-items: center;
   font-size: 18px;
   height: 24px;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .info>h6 {
@@ -92,19 +92,23 @@ main {
 
 .buttons {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .buttons>.btn {
-  width: 48%;
+  width: 100%;
 }
 
 .btn {
   padding: 24px;
-  margin: 20px 0;
   border-radius: 24px;
   border: 1px solid var(--primary-color);
   background-color: transparent;
+}
+
+.buttons>.btn:first-of-type {
+  margin-bottom: 20px;
 }
 
 .btn:hover {
@@ -113,15 +117,13 @@ main {
 }
 
 .exit-section {
-  flex-basis: 400px;
   background-color: var(--light-font-color);
   border-radius: 32px;
-  padding: 20px 30px 5px 30px;
-  margin-left: 50px;
+  padding: 20px;
 }
 
 #output-container{
-  height: 100%;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -148,12 +150,11 @@ main {
 }
 
 #no-message>img {
-  width: 300px;
-  margin-bottom: 30px;
+  display: none;
 }
 
 #no-message>h2 {
-  margin: 20px 0;
+  margin-bottom: 10px;
 }
 
 footer {
@@ -169,4 +170,50 @@ footer {
 .container {
   max-width: 1440px;
   margin: auto;
+}
+
+
+@media screen and (min-width: 576px) {
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .buttons>.btn {
+    width: 48%;
+  }
+
+  .buttons>.btn:first-of-type {
+    margin-bottom: 0;
+  }
+}
+
+
+@media screen and (min-width: 992px) {
+  .main-container {
+    flex-direction: row;
+    min-height: 84vh;
+    padding: 10px 100px;
+  }
+
+  .entry-section {
+    height: auto;
+    flex-grow: 1;
+  }
+
+  .exit-section {
+    flex-basis: 400px;
+    margin-left: 50px;
+  }
+
+  #output-container{
+    height: 100%;
+  }
+
+  #no-message>img {
+    display: block;
+    width: 300px;
+    margin-bottom: 40px;
+  }
 }

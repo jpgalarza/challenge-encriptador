@@ -168,7 +168,7 @@ footer {
 .footer-container {
   color: var(--light-font-color);
   text-align: center;
-  padding: 15px 0;
+  padding: 15px 30px;
 }
 
 .container {

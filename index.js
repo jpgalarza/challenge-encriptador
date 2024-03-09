@@ -33,11 +33,10 @@ const submitMessage = (e) => {
 
   if(value === '') return;
 
-  
   if(specialChars.test(value)) {
     Swal.fire({
-      title: "No se pudo procesar",
-      text: "El texto no debe contener caracteres especiales",
+      title: "Corregir el texto",
+      text: "No debe contener caracteres especiales",
       icon: "error"
     });
 
@@ -104,7 +103,7 @@ const copyText = async () => {
     Swal.fire({
       position: "center",
       icon: "error",
-      title: "No se copió texto",
+      title: "Error al copiar",
       showConfirmButton: false,
       timer: 1000
     });
